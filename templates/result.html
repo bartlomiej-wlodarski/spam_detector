@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>result</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<style type="text/css">
+    .btn {
+		font-size: 2em;
+		border-radius: 5px;
+		padding: 12px 30px;
+		background: #933;
+		text-transform: uppercase;
+		margin-top: 10px;
+	}
+
+	.card-header{
+		border-bottom:1px solid #fffc;
+		padding:10px;
+		text-align: center;
+		margin-top:0px;
+
+	}
+
+	.head-part {
+		background-color: #5c5c5c;
+		border-radius: 30px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding: 30px;
+	}
+
+	.back-part {
+		background-color: #333;
+		padding: 0px;
+	}
+
+	</style>
+
+</head>
+<body class="back-part">
+  <header>
+		<div class="container back-part">
+			<div class="container text-xs-center head-part">
+				<h1 class="display-1 card-header" align="center" style="color:#fffc;">SMS Spam detection  </h1>
+				<p class="lead" align="center" style="color:#fffc;"> Write your SMS message in the box below to determine if it is safe to read or not  </p>
+			</div>
+		</div>
+	</header>
+
+
+
+	<p style="font-size: 2em;text-align: center;color:#FFF;font-weight: bold;">Result:</p>
+	<div class="results" >
+
+	{% if prediction == 1%}
+	<h2 style="color:red;font-weight: bold;" align="center">Unwanted message detected</h2>
+	{% elif prediction == 0%}
+	<h2 style="color:green;font-weight: bold;" align="center">Safe message</h2>
+	{% endif %}
+
+	</div>
+
+<div class="form-row text-center">
+    <div class="col-12">
+         <a href="/"> <button type="submit" class="btn btn-primary">Check Again</button> </a>
+    </div>
+ </div>
+
+</body>
+</html>
